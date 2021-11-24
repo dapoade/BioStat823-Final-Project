@@ -8,12 +8,12 @@ st.markdown(""" # Covid-19 Dashboard """ )
 
 st.markdown(""" ### Covid Deaths, Hospitalizations, and ICU admittances by Month""")
 
-covidp1 = pd.read_csv('covid_part1.csv',index_col=0)
-covidp2 = pd.read_csv('covid_part2.csv',index_col=0)
-covid   = pd.concat([covidp1, covidp2])
+# covidp1 = pd.read_csv('covid_part1.csv',index_col=0)
+# covidp2 = pd.read_csv('covid_part2.csv',index_col=0)
+# covid   = pd.concat([covidp1, covidp2])
 
 
-# covid = pd.read_csv('./covidv2.csv')
+covid = pd.read_csv('./covidv2.csv')
 
 covid.replace({'icu_yn': {'Yes': 1,'No': 0}}, inplace = True)
 covid.replace({'hosp_yn': {'Yes': 1,'No': 0}}, inplace = True)
