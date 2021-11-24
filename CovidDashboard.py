@@ -20,7 +20,7 @@ covid.replace({'hosp_yn': {'Yes': 1,'No': 0}}, inplace = True)
 
 
 #Line Chart of Deaths over time
-death_month = covid.groupby(['case_month'])['death_yn', 'hosp_yn', 'icu_yn'].sum().reset_index()
+death_month = covid.groupby(['case_month'])['death_yn', 'hosp_yn', 'icu_yn'].sum().reset_index(inplace = True)
 death_month.columns = ['Month', 'Deaths', 'Hospitalizations', "ICU"]
 death_month.set_index('Month', inplace = True)
 
